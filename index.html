@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+      <script src="./src/ads.js"></script>
+      <script src="./src/ads.min.js"></script>
+    <div class="main_wrapper">
+      <div class="slider__wrapper">
+        <div id="ContentAd" class="content _1">
+          <a href="http://youtube.com">
+
+            <img src="./img/You_Tube_logo.png" alt="" class="yout" />
+          </a>
+        </div>
+        <div id="GoogleAdsense" class="content _2">
+          <a href="http://google.ru">
+
+            <img src="./img/You_Tube_logo.png" alt="" class="yout" />
+          </a>
+        </div>
+        <div id="headerAd" class="content _3">
+          <a href="http://ya.ru">
+
+            <img src="./img/You_Tube_logo.png" alt="" class="yout" />
+          </a>
+        </div>
+        <div class="adsbygoogle content _4">
+          <a href="http://yandex.ru">
+
+            <img src="./img/You_Tube_logo.png" alt="" class="yout" />
+          </a>
+        </div>
+        <div class="content _5">
+          <a href="http://lenta.ru">
+
+            <img src="./adengine/girl.jpg" alt="" class="girl" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <script>
+      if(ads !== undefined){
+        console.log('ads is loaded');
+      }else{
+        console.log('ads is bloked');
+      }
+
+      if(adsMin !== undefined){
+        console.log('adsMin is loaded');
+      }else{
+        console.log('adsMin is bloked');
+      }
+    </script>
+  </body>
+</html>
