@@ -13,7 +13,7 @@
   <script src="./src/ads.js"></script>
   <script src="./src/ads.min.js"></script>
   <div class="main_wrapper">
-    <div class="slider__wrapper">
+    <!-- <div class="slider__wrapper">
       <div id="ads_expand">
         <a href="http://youtube.com">
 
@@ -44,7 +44,7 @@
           <img src="./img/girl.jpg" alt="" class="girl" />
         </a>
       </div>
-    </div>
+    </div> -->
   </div>
   <script>
     var selectors = {
@@ -56,6 +56,16 @@
 
     }
     window.onload = function () {
+      for (var id in selectors) {
+        var div = document.createElement('div');
+        div.style.position = 'absolute';
+        div.style.height = '10px';
+        div.style.width = '10px';
+        div.style.backgroundColor = 'lightblue';
+        div.setAttribute('id', id);
+        document.body.appendChild(div);
+      }
+
       var itemStatus = {}
       for (var i in selectors) {
         // debugger
