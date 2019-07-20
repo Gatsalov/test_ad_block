@@ -58,9 +58,9 @@
     window.onload = function () {
       var itemStatus = {}
       for (var i in selectors) {
-        debugger
+        // debugger
         var item = document.getElementById(i);
-        if (item.style.display === 'none') {
+        if (item.clientHeight === 0) {
           itemStatus[selectors[i]] = 'blocked'
         } else {
           itemStatus[selectors[i]] = 'active'
