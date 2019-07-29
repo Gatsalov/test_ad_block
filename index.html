@@ -10,8 +10,8 @@
 
 <body>
   <!-- bc_adv_container, bc-adv -->
-  <script src="./src/ads.js"></script>
-  <script src="./src/ads.min.js"></script>
+  <!-- <script src="./src/ads.js"></script> -->
+  <!-- <script src="./src/ads.min.js"></script> -->
   <div class="main_wrapper">
     <!-- <div class="slider__wrapper">
       <div id="ads_expand">
@@ -55,7 +55,9 @@
       'ad_300X250': 5
 
     }
+    var elements = [];
     window.onload = function () {
+      var itemStatus = {};
       for (var id in selectors) {
         var div = document.createElement('div');
         div.style.position = 'absolute';
@@ -64,18 +66,23 @@
         div.style.backgroundColor = 'lightblue';
         div.setAttribute('id', id);
         document.body.appendChild(div);
-      }
-
-      var itemStatus = {}
-      for (var i in selectors) {
-        // debugger
-        var item = document.getElementById(i);
-        if (item.clientHeight === 0) {
+        
+        if (div.clientHeight === 0) {
           itemStatus[selectors[i]] = 'blocked'
         } else {
           itemStatus[selectors[i]] = 'active'
         }
       }
+
+      // for (var i in selectors) {
+      //   // debugger
+      //   var item = document.getElementById(i);
+      //   if (item.clientHeight === 0) {
+      //     itemStatus[selectors[i]] = 'blocked'
+      //   } else {
+      //     itemStatus[selectors[i]] = 'active'
+      //   }
+      // }
       console.log(itemStatus);
     }
   </script>
