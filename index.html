@@ -714,6 +714,7 @@
     }
     var elements = [];
     window.onload = function () {
+      console.time('start')
       var wrapper = document.createElement('div');
       wrapper.style.position = 'absolute';
       document.body.appendChild(wrapper);
@@ -739,18 +740,20 @@
         }
       }
       wrapper.remove();
-
+      
       // for (var i in selectors) {
-      //   // debugger
-      //   var item = document.getElementById(i);
-      //   if (item.clientHeight === 0) {
-      //     itemStatus[selectors[i]] = 'blocked'
-      //   } else {
-      //     itemStatus[selectors[i]] = 'active'
-      //   }
-      // }
-      console.log(itemStatus);
-      console.log('FIRST');
+        //   // debugger
+        //   var item = document.getElementById(i);
+        //   if (item.clientHeight === 0) {
+          //     itemStatus[selectors[i]] = 'blocked'
+          //   } else {
+            //     itemStatus[selectors[i]] = 'active'
+            //   }
+            // }
+            console.log(itemStatus);
+            console.log('FIRST');
+            console.timeEnd('start');
+            console.log(performance.now(),'performance');
     }
   </script>
 </body>
