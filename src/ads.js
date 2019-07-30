@@ -663,7 +663,10 @@ let ads = `###A9AdsMiddleBoxTop
 
 const splitedAds = ads.split(/\n/);
 const adsObj = {};
+// for(let i in splitedAds){
+//     console.log(i)
+// }
 splitedAds.forEach((el, idx)=>{
-    adsObj[el.slice(2)] = idx + 1;
+    adsObj[`${el.slice(2)}`] = idx + 1;
 })
-console.log(adsObj);
+console.log(JSON.parse(JSON.stringify(adsObj)));
