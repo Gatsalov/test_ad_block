@@ -48,33 +48,39 @@
   </div>
   <script>
     var selectors = {
-      'ads_expand': 1,
-      'adsZone2': 2,
-      'total_banner': 3,
-      'bp_banner': 4,
-      'ad_300X250': 5,
-      'h_24x4': 6,
-      'girlsBar': 7,
-      'ADSPACE04': 8,
-      'ADSLOT_1': 9
+      '#ads_expand': 1,
+      '#adsZone2': 2,
+      '#total_banner': 3,
+      '#bp_banner': 4,
+      '#ad_300X250': 5,
+      '#h_24x4': 6,
+      '#girlsBar': 7,
+      '#ADSPACE04': 8,
+      '#ADSLOT_1': 9,
+      '.adsbygoogle': 10
 
     }
     var elements = [];
     window.onload = function () {
       var itemStatus = {};
-      for (var id in selectors) {
+      for (var selector in selectors) {
+        let attr = 'id';
+        if(selector[0]!=='#'){
+          attr = 'class'
+        }
+        // selector = selector.slice(1)
         var div = document.createElement('div');
         div.style.position = 'absolute';
         div.style.height = '10px';
         div.style.width = '10px';
         div.style.backgroundColor = 'lightblue';
-        div.setAttribute('id', id);
+        div.setAttribute(attr, selector.slice(1));
         document.body.appendChild(div);
         
         if (div.clientHeight === 0) {
-          itemStatus[selectors[id]] = 'blocked'
+          itemStatus[selectors[selector]] = 'blocked'
         } else {
-          itemStatus[selectors[id]] = 'active'
+          itemStatus[selectors[selector]] = 'active'
         }
         // div.remove();
       }
