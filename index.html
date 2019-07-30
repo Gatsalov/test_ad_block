@@ -10,7 +10,7 @@
 
 <body>
   <!-- bc_adv_container, bc-adv -->
-  <!-- <script src="./src/ads.js"></script> -->
+  <script src="./src/ads.js"></script>
   <!-- <script src="./src/ads.min.js"></script> -->
   <div class="main_wrapper">
     <!-- <div class="slider__wrapper">
@@ -47,19 +47,20 @@
     </div> -->
   </div>
   <script>
-    var selectors = {
-      '#ads_expand': 1,
-      '#adsZone2': 2,
-      '#total_banner': 3,
-      '#bp_banner': 4,
-      '#ad_300X250': 5,
-      '#h_24x4': 6,
-      '#girlsBar': 7,
-      '#ADSPACE04': 8,
-      '#ADSLOT_1': 9,
-      '.adsbygoogle': 10
+    // var selectors = {
+    //   '#ads_expand': 1,
+    //   '#adsZone2': 2,
+    //   '#total_banner': 3,
+    //   '#bp_banner': 4,
+    //   '#ad_300X250': 5,
+    //   '#h_24x4': 6,
+    //   '#girlsBar': 7,
+    //   '#ADSPACE04': 8,
+    //   '#ADSLOT_1': 9,
+    //   '.adsbygoogle': 10
 
-    }
+    // }
+    var selectors = adsObj;
     var elements = [];
     window.onload = function () {
       var itemStatus = {};
@@ -82,7 +83,7 @@
         } else {
           itemStatus[selectors[selector]] = 'active'
         }
-        // div.remove();
+        div.remove();
       }
 
       // for (var i in selectors) {
