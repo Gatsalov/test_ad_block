@@ -659,7 +659,16 @@ let ads = `###A9AdsMiddleBoxTop
 ###XEadLeaderboard
 ###XEadSkyscraper
 ###YahooAdParentContainer
-###YahooAdsContainer`
+###YahooAdsContainer
+###ads_expand
+###adsZone2
+###total_banner
+###bp_banner
+###ad_300X250
+###h_24x4
+###girlsBar
+###ADSPACE04
+###ADSLOT_1`
 
 const splitedAds = ads.split(/\n/);
 const adsObj = {};
