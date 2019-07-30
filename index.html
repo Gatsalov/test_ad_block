@@ -714,6 +714,9 @@
     }
     var elements = [];
     window.onload = function () {
+      var wrapper = document.createElement('div');
+      wrapper.style.position = 'absolute';
+      document.body.appendChild(wrapper);
       var itemStatus = {};
       for (var selector in selectors) {
         let attr = 'id';
@@ -721,21 +724,21 @@
           attr = 'class'
         }
         // selector = selector.slice(1)
-        var div = document.createElement('div');
-        div.style.position = 'absolute';
-        div.style.height = '10px';
-        div.style.width = '10px';
-        div.style.backgroundColor = 'lightblue';
-        div.setAttribute(attr, selector.slice(1));
-        document.body.appendChild(div);
+        var adsItem = document.createElement('div');
+        adsItem.style.position = 'absolute';
+        adsItem.style.height = '10px';
+        adsItem.style.width = '10px';
+        adsItem.style.backgroundColor = 'lightblue';
+        adsItem.setAttribute(attr, selector.slice(1));
+        wrapper.appendChild(adsItem);
         
-        if (div.clientHeight === 0) {
+        if (adsItem.clientHeight === 0) {
           itemStatus[selectors[selector]] = 'blocked'
         } else {
           itemStatus[selectors[selector]] = 'active'
         }
-        div.remove();
       }
+      wrapper.remove();
 
       // for (var i in selectors) {
       //   // debugger
