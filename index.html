@@ -714,15 +714,15 @@
     }
     var elements = [];
     window.onload = function () {
-      console.time('start')
+      console.time('start');
       var wrapper = document.createElement('div');
       wrapper.style.position = 'absolute';
       document.body.appendChild(wrapper);
       var itemStatus = {};
       for (var selector in selectors) {
-        let attr = 'id';
+        var attr = 'id';
         if(selector[0]!=='#'){
-          attr = 'class'
+          attr = 'class';
         }
         // selector = selector.slice(1)
         var adsItem = document.createElement('div');
@@ -734,11 +734,17 @@
         wrapper.appendChild(adsItem);
         
         if (adsItem.clientHeight === 0) {
-          itemStatus[selectors[selector]] = 'blocked'
+          itemStatus[selectors[selector]] = 'blocked';
         } else {
-          itemStatus[selectors[selector]] = 'active'
+          itemStatus[selectors[selector]] = 'active';
         }
       }
+      debugger;
+      if(!('remove' in Element.prototype))(
+        Element.prototype.remove = function(){
+          this.parentNode.removeChild(this);
+        }
+      )
       wrapper.remove();
       
       // for (var i in selectors) {
